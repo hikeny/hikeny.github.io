@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[hexo上传的文件怎么弄]]></title>
+    <url>%2F2018%2F10%2F04%2F222%2F</url>
+    <content type="text"><![CDATA[工具我发现直接在文档上写东西会出现一些莫名其妙的问题（比如输入汉字出现乱码）。所以我就找到了一些文档编辑器（忘了有哪些了），我用的atom（注意右下角选utf-8）。 写文件要用的东西（干货）1234567891011121314151617181920212223242526272829303132333435363738394041424344454647# 写作介绍## 1，字体介绍*这是斜体* 或 _这也是斜体_**这是粗体*****这是加粗斜体***~~这是删除线~~## 2，分级标题# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题## 3，超链接写法：行内形式：[我的博客](https://xfbxfbxfb.github.io/)参考形式：[我的博客][1]，有一个很好的平台-[简书][2][1]:https://xfbxfbxfb.github.io/[2]:http://www.jianshu.com/自动链接：我的博客地址&lt;https://xfbxfbxfb.github.io/&gt;## 4,列表无序列表：写法：* 无序列表项1+ 无序列表项2- 无序列表项3有序列表：写法：1.有序列表项12.有序列表项23.有序列表项3## 5，插入图片在 Hexo 中插入图片，首先需要将图片放在xxxx(与该md文件同名)文件夹下，然后如下方式进行插入：![你想输入的替代文字](xxxx/图片名.jpg)## 6，表格| 表头1|表头2|表头3|表头4|-| :- | :-: | -: ||默认左对齐|左对齐|居中对其|右对齐||默认左对齐|左对齐|居中对其|右对齐||默认左对齐|左对齐|居中对其|右对齐| 这个东西非原创，从网上到处翻的（所有符号前要有空格）。]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[hexo博客遭遇的神奇问题]]></title>
+    <url>%2F2018%2F10%2F04%2F5479%2F</url>
+    <content type="text"><![CDATA[这个博客我建了很久（我是电脑小白），其间遇到了两个低级问题，网上却没有人指出（可能是这些问题太低级了吧），今天特来整理一下这些问题。hexo搭建流程(亲测有效) git bash重启后hexo指令无效1cd hexo的目录 这个问题让我重安了很多次hexo（ 苦逼），所以我就把它放在第一位。 关于_config.yml文件的修改这个东西很迷，这个文件我直接在目录里查找，找到了四个，需要改的文件居然有 两个，格式 直接复制到文件再修改。格式如下：1234deploy: type: git repo: 填你自己的 branch: master ssh密钥在哪我直接在电脑里搜 .ssh 文件,那个pub结尾的那个用记事本打开，里面的全部就是密钥。]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2018%2F09%2F30%2F111%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
