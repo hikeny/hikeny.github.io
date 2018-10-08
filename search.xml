@@ -2,6 +2,18 @@
 <search>
   <entry>
     <title><![CDATA[翻墙工具SSR的搭建]]></title>
+    <url>%2F2018%2F10%2F08%2Fzz%2F</url>
+    <content type="text"><![CDATA[host文件没权限我这个版本的win10没有“用户和组”，网上传的一些普通的方法改不了权限，找到了如下的方法才解决： 1、使用“Win+R”快捷键或右键单击左下角，进入运行界面;输入netplwiz进入用户帐户设置界面。 2、选择要增加权限的账户，点击属性。 3、点击组成员，点选最后一行的“其他”。]]></content>
+      <categories>
+        <category>网站</category>
+        <category>PHP</category>
+      </categories>
+      <tags>
+        <tag>用户权限</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[翻墙工具SSR的搭建]]></title>
     <url>%2F2018%2F10%2F06%2F111%2F</url>
     <content type="text"><![CDATA[刚开始。。。果然，翻墙 这两个字还是挺敏感的，直接搜标题是搜不到东西的，我一删去这两个字，就搜到了优秀的搭建流程，不过当我看见 “第一步、服务器购买”,我就决定先把它放置一段时间来。 不过。。。我觉得服务器这个东西好像还挺重要的，就去建了个tomcat服务器(自己建自己的贼舒服)。但目前还不知道用来干什么。]]></content>
       <categories>
