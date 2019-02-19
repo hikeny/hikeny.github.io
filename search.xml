@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>%2F2019%2F02%2F19%2F1%2F</url>
+    <content type="text"><![CDATA[测试测试]]></content>
+      <categories>
+        <category>网站</category>
+        <category>linux</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[查看XX里包含的文件并将其分开]]></title>
     <url>%2F2018%2F10%2F17%2F444%2F</url>
     <content type="text"><![CDATA[强力kali有些文件或图片隐藏的一些东西，可以用kali里面的命令binwalk 和foremost 搞出来（命令后接文件名）。binwalk发现并列出子文件，foremost将其分开并保存在桌面。 注：一些损坏的压缩包也将其中的文件可以搞出来。]]></content>
