@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="dbServername弄错了，（就是本机上填localhost那个参数）我就是犯了这个错误。系统hosts文件未提供填写的服务器参数的解析。方法：在服务器上查看host文件（在/etc里），看里面写了什么（一般为主机名和127.0.0.1）要么改为host里的主机名，要么把host文件改了 只要一出现“mysql_connect”函数，就没反应，也不报错。方法：将“libmysql.dll”复制">
+<meta name="description" content="dbServername弄错了，（就是本机上填localhost那个参数）我 就是犯了这个错误。系统hosts文件未提供填写的服务器参数的解析。方法：在服务器上查看host文件（在/etc里），看里面写了什么（一般为主机名和127.0.0.1）要么改为host里的主机名，要么把host文件改了 只要一出现“mysql_connect”函数，就没反应，也不报错。方法：将“libmysql.dll”复">
 <meta name="keywords" content="mysql">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mysql部分连接不上原因">
 <meta property="og:url" content="http://yoursite.com/2019/02/20/19/index.html">
 <meta property="og:site_name" content="Good Good Study">
-<meta property="og:description" content="dbServername弄错了，（就是本机上填localhost那个参数）我就是犯了这个错误。系统hosts文件未提供填写的服务器参数的解析。方法：在服务器上查看host文件（在/etc里），看里面写了什么（一般为主机名和127.0.0.1）要么改为host里的主机名，要么把host文件改了 只要一出现“mysql_connect”函数，就没反应，也不报错。方法：将“libmysql.dll”复制">
+<meta property="og:description" content="dbServername弄错了，（就是本机上填localhost那个参数）我 就是犯了这个错误。系统hosts文件未提供填写的服务器参数的解析。方法：在服务器上查看host文件（在/etc里），看里面写了什么（一般为主机名和127.0.0.1）要么改为host里的主机名，要么把host文件改了 只要一出现“mysql_connect”函数，就没反应，也不报错。方法：将“libmysql.dll”复">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-20T13:44:01.558Z">
+<meta property="og:updated_time" content="2019-02-21T15:53:29.482Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql部分连接不上原因">
-<meta name="twitter:description" content="dbServername弄错了，（就是本机上填localhost那个参数）我就是犯了这个错误。系统hosts文件未提供填写的服务器参数的解析。方法：在服务器上查看host文件（在/etc里），看里面写了什么（一般为主机名和127.0.0.1）要么改为host里的主机名，要么把host文件改了 只要一出现“mysql_connect”函数，就没反应，也不报错。方法：将“libmysql.dll”复制">
+<meta name="twitter:description" content="dbServername弄错了，（就是本机上填localhost那个参数）我 就是犯了这个错误。系统hosts文件未提供填写的服务器参数的解析。方法：在服务器上查看host文件（在/etc里），看里面写了什么（一般为主机名和127.0.0.1）要么改为host里的主机名，要么把host文件改了 只要一出现“mysql_connect”函数，就没反应，也不报错。方法：将“libmysql.dll”复">
 
 
 
@@ -407,14 +407,8 @@
       
 
       
-        <h1 id="dbServername弄错了，（就是本机上填localhost那个参数）"><a href="#dbServername弄错了，（就是本机上填localhost那个参数）" class="headerlink" title="dbServername弄错了，（就是本机上填localhost那个参数）"></a>dbServername弄错了，（就是本机上填localhost那个参数）</h1><p>我就是犯了这个错误。<br>系统hosts文件未提供填写的服务器参数的解析。<br>方法：在服务器上查看host文件（在/etc里），看里面写了什么（一般为主机名和127.0.0.1）<br>要么改为host里的主机名，要么把host文件改了</p>
-<h1 id="只要一出现“mysql-connect”函数，就没反应，也不报错。"><a href="#只要一出现“mysql-connect”函数，就没反应，也不报错。" class="headerlink" title="只要一出现“mysql_connect”函数，就没反应，也不报错。"></a>只要一出现“mysql_connect”函数，就没反应，也不报错。</h1><p>方法：将“libmysql.dll”复制到apache的bin目录下。然后重启，观察error.log，如果错误消失，那恭喜了。<br>注：网上资料也有说将““libmysql.dll””“php_mysql.dll”复制到windows/system32的</p>
-<h1 id="运行时出现-fatal-error-call-to-undefined-function-mysql-connect-in-var-www-html-mytest-php"><a href="#运行时出现-fatal-error-call-to-undefined-function-mysql-connect-in-var-www-html-mytest-php" class="headerlink" title="运行时出现 fatal   error:   call   to   undefined   function     mysql_connect()   in   var/www/html/mytest.php"></a>运行时出现 fatal   error:   call   to   undefined   function     mysql_connect()   in   var/www/html/mytest.php</h1><h2 id="php-ini中"><a href="#php-ini中" class="headerlink" title="php.ini中"></a>php.ini中</h2><p>  extension_dir设置为   “d:＼apache2＼php＼ext “绝对路径，否则有些环境中会出错。<br>  打开下面两行功能扩展<br>  extension=php_mysql.dll<br>  extension=php_mysqli.dll </p>
-<h2 id="拷贝libmysql-dll-php目录下-和php-mysql-dll-php-ext目录下-至c-＼windows＼system32目录下-libmysql-dll必须为php目录下，比如我的为D-＼apache2＼php目录下的libmysql-dll，php-mysql-dll则在D-＼apache2＼php＼ext"><a href="#拷贝libmysql-dll-php目录下-和php-mysql-dll-php-ext目录下-至c-＼windows＼system32目录下-libmysql-dll必须为php目录下，比如我的为D-＼apache2＼php目录下的libmysql-dll，php-mysql-dll则在D-＼apache2＼php＼ext" class="headerlink" title="拷贝libmysql.dll(php目录下)和php_mysql.dll(php/ext目录下)至c:＼windows＼system32目录下(libmysql.dll必须为php目录下，比如我的为D:＼apache2＼php目录下的libmysql.dll，php_mysql.dll则在D:＼apache2＼php＼ext)"></a>拷贝libmysql.dll(php目录下)和php_mysql.dll(php/ext目录下)至c:＼windows＼system32目录下(libmysql.dll必须为php目录下，比如我的为D:＼apache2＼php目录下的libmysql.dll，php_mysql.dll则在D:＼apache2＼php＼ext)</h2><h2 id="测试，"><a href="#测试，" class="headerlink" title="测试，"></a>测试，</h2><p>  1&gt;   先打开命令行<br>A)依次点击“开始”菜单-&gt; “mysql”-&gt; “mysql5   server”-&gt; “MySQL   Command   Line   Client”<br>//如此步成功则mysql安全成功，失效则mysql安装失败，请卸载后重装 </p>
-<p>B)输入密码<br>//此步正常则说明   root账户的密码正确。失败则账号密码有错 </p>
-<pre><code>2&gt;   新建文件至主目录，并保存为testmysql.php，接着在浏览器中输入http://localhost/testmysql.php   （或者http://localhost:81/testmysql.php）
-</code></pre><p>如果不行查看一下apache是否加载了php与 mysql方法</p>
-<p>apache中支置对php5的支持httpd.conf文件中加入下面三行<br>PHPIniDir “D:/ccopen/php5/“<br>LoadModule php5_module “D:/ccopen/php5/php5apache2_2.dll”<br>AddType application/x-httpd-php .php<br>php.ini中去掉下面两行分号<br>extension=php_mysql.dll<br>extension=php_mysqli.dll<br>将php_mysql.dll和libmysql.dll拷到system32<br>重起apache服务器</p>
+        <h1 id="dbServername弄错了，（就是本机上填localhost那个参数）"><a href="#dbServername弄错了，（就是本机上填localhost那个参数）" class="headerlink" title="dbServername弄错了，（就是本机上填localhost那个参数）"></a>dbServername弄错了，（就是本机上填localhost那个参数）</h1><p><strong>我</strong> 就是犯了这个错误。<br>系统hosts文件未提供填写的服务器参数的解析。<br>方法：在服务器上查看host文件（在/etc里），看里面写了什么（一般为主机名和127.0.0.1）<br>要么改为host里的主机名，要么把host文件改了</p>
+<h1 id="只要一出现“mysql-connect”函数，就没反应，也不报错。"><a href="#只要一出现“mysql-connect”函数，就没反应，也不报错。" class="headerlink" title="只要一出现“mysql_connect”函数，就没反应，也不报错。"></a>只要一出现“mysql_connect”函数，就没反应，也不报错。</h1><p>方法：将“libmysql.dll”复制到apache的bin目录下。然后重启，观察error.log错误是否消失。<br>注：网上资料也有说将““libmysql.dll””“php_mysql.dll”复制到windows/system32的</p>
 
       
     </div>
@@ -545,7 +539,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -556,7 +550,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -589,7 +583,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#dbServername弄错了，（就是本机上填localhost那个参数）"><span class="nav-number">1.</span> <span class="nav-text">dbServername弄错了，（就是本机上填localhost那个参数）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#只要一出现“mysql-connect”函数，就没反应，也不报错。"><span class="nav-number">2.</span> <span class="nav-text">只要一出现“mysql_connect”函数，就没反应，也不报错。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运行时出现-fatal-error-call-to-undefined-function-mysql-connect-in-var-www-html-mytest-php"><span class="nav-number">3.</span> <span class="nav-text">运行时出现 fatal   error:   call   to   undefined   function     mysql_connect()   in   var/www/html/mytest.php</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#php-ini中"><span class="nav-number">3.1.</span> <span class="nav-text">php.ini中</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拷贝libmysql-dll-php目录下-和php-mysql-dll-php-ext目录下-至c-＼windows＼system32目录下-libmysql-dll必须为php目录下，比如我的为D-＼apache2＼php目录下的libmysql-dll，php-mysql-dll则在D-＼apache2＼php＼ext"><span class="nav-number">3.2.</span> <span class="nav-text">拷贝libmysql.dll(php目录下)和php_mysql.dll(php/ext目录下)至c:＼windows＼system32目录下(libmysql.dll必须为php目录下，比如我的为D:＼apache2＼php目录下的libmysql.dll，php_mysql.dll则在D:＼apache2＼php＼ext)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试，"><span class="nav-number">3.3.</span> <span class="nav-text">测试，</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#dbServername弄错了，（就是本机上填localhost那个参数）"><span class="nav-number">1.</span> <span class="nav-text">dbServername弄错了，（就是本机上填localhost那个参数）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#只要一出现“mysql-connect”函数，就没反应，也不报错。"><span class="nav-number">2.</span> <span class="nav-text">只要一出现“mysql_connect”函数，就没反应，也不报错。</span></a></li></ol></div>
             
 
           </div>

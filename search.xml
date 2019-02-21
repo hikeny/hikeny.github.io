@@ -13,18 +13,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[pip更新]]></title>
-    <url>%2F2019%2F02%2F20%2F21%2F</url>
-    <content type="text"><![CDATA[如果你是用Python2.x，那就是Python2 -m pip install –upgrade pip如果你是Python3.x，那就是python3 -m pip install –upgrade pip]]></content>
-      <categories>
-        <category>编程语言</category>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Centos中安装py2和py3]]></title>
     <url>%2F2019%2F02%2F20%2F22%2F</url>
     <content type="text"><![CDATA[Centos自带python2，由于执行yum需要python2，所以即使安装了python3也不能删除python2 1.安装依赖包yum -y install zlib-devel bzip2-devel openssl-devel ncurses-devel sqlite-devel readline-devel tk-devel gdbm-devel db4-devel libpcap-devel xz-devel 2.下载自己需要的python版本，例如python3.6.2,下载要花费一段时间，要耐心等待wget https://www.python.org/ftp/python/3.6.2/Python-3.6.2.tar.xz 3.新建一个文件夹存放python3mkdir /usr/local/python3 4.把安装包移动到该新建文件夹下，解压安装包，安装python3,依次执行以下命令，花费时间较长，耐心等待mv Python-3.6.2.tar.xz /usr/local/python3 tar -xvJf Python-3.6.2.tar.xz cd Python-3.6.2 ./configure --prefix=/usr/local/python3 make make install 5.创建软连接ln -s /usr/local/python3/bin/python3 /usr/bin/python3 ln -s /usr/local/python3/bin/pip3 /usr/bin/pip3 6.此时python3已经装好，在命令行中输入python3测试7.修改yum配置文件，python2与python3共存vi /usr/bin/yum 把#! /usr/bin/python修改为#! /usr/bin/python2（配置文件第一行） 同理 vi /usr/libexec/urlgrabber-ext-down 把文件里面的#! /usr/bin/python 也修改为#! /usr/bin/python2]]></content>
@@ -37,15 +25,27 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[csrf]]></title>
-    <url>%2F2019%2F02%2F20%2F17%2F</url>
-    <content type="text"><![CDATA[csrf（cross_site request forgery）跨站请求伪造(CSRF)是一种允许攻击者通过受害者发送任意HTTP请求的一类攻击方法。此处所指的受害者是一个不知情的同谋，所有的伪造请求都由他发起，而不是攻击者。这样，就很难确定哪些请求是属于跨站请求伪造攻击。eg:以下请求：GET http://bank.com/transfer.do?acct=jim&amp;amount=10000 HTTP/1.1可以被伪造成：http://bank.com/transfer.do?acct=mak&amp;amount=100000通过诱使用户点击伪造的链接，来达到攻击的目的。防范办法：0、使用POST方式而不是使用GET来提交表单，在处理表单提交时使用$_POST而不是$_REQUEST。1、使用Form表单替换A标签方式提交（A 的href参数中加入 token，就会造成风险，因为后置页面可以通过referer获取来源页面的完整url）。2、在特别重要的位置使用 https 进行数据传输。]]></content>
+    <title><![CDATA[pip更新]]></title>
+    <url>%2F2019%2F02%2F20%2F21%2F</url>
+    <content type="text"><![CDATA[如果你是用Python2.x，那就是Python2 -m pip install –upgrade pip如果你是Python3.x，那就是python3 -m pip install –upgrade pip]]></content>
       <categories>
-        <category>web</category>
-        <category>漏洞</category>
+        <category>编程语言</category>
+        <category>python</category>
       </categories>
       <tags>
-        <tag>漏洞</tag>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[文字滚动marquee]]></title>
+    <url>%2F2019%2F02%2F20%2F17%2F</url>
+    <content type="text"><![CDATA[1234567&lt;marquee&gt;文字滚动（貌似可以做弹幕用）&lt;/marquee&gt;direction：滚动方向behavior：滚动方式scrollamount：滚动速度scrolldelay：延迟滚动vspace：和hspace：滚动文字距离周围的距离bgcolor：背景颜色]]></content>
+      <categories>
+        <category>编程语言</category>
+        <category>html</category>
+      </categories>
+      <tags>
+        <tag>html</tag>
       </tags>
   </entry>
   <entry>
@@ -87,7 +87,7 @@
   <entry>
     <title><![CDATA[mysql部分连接不上原因]]></title>
     <url>%2F2019%2F02%2F20%2F19%2F</url>
-    <content type="text"><![CDATA[dbServername弄错了，（就是本机上填localhost那个参数）我就是犯了这个错误。系统hosts文件未提供填写的服务器参数的解析。方法：在服务器上查看host文件（在/etc里），看里面写了什么（一般为主机名和127.0.0.1）要么改为host里的主机名，要么把host文件改了 只要一出现“mysql_connect”函数，就没反应，也不报错。方法：将“libmysql.dll”复制到apache的bin目录下。然后重启，观察error.log，如果错误消失，那恭喜了。注：网上资料也有说将““libmysql.dll””“php_mysql.dll”复制到windows/system32的 运行时出现 fatal error: call to undefined function mysql_connect() in var/www/html/mytest.phpphp.ini中 extension_dir设置为 “d:＼apache2＼php＼ext “绝对路径，否则有些环境中会出错。 打开下面两行功能扩展 extension=php_mysql.dll extension=php_mysqli.dll 拷贝libmysql.dll(php目录下)和php_mysql.dll(php/ext目录下)至c:＼windows＼system32目录下(libmysql.dll必须为php目录下，比如我的为D:＼apache2＼php目录下的libmysql.dll，php_mysql.dll则在D:＼apache2＼php＼ext)测试， 1&gt; 先打开命令行A)依次点击“开始”菜单-&gt; “mysql”-&gt; “mysql5 server”-&gt; “MySQL Command Line Client”//如此步成功则mysql安全成功，失效则mysql安装失败，请卸载后重装 B)输入密码//此步正常则说明 root账户的密码正确。失败则账号密码有错 2&gt; 新建文件至主目录，并保存为testmysql.php，接着在浏览器中输入http://localhost/testmysql.php （或者http://localhost:81/testmysql.php） 如果不行查看一下apache是否加载了php与 mysql方法 apache中支置对php5的支持httpd.conf文件中加入下面三行PHPIniDir “D:/ccopen/php5/“LoadModule php5_module “D:/ccopen/php5/php5apache2_2.dll”AddType application/x-httpd-php .phpphp.ini中去掉下面两行分号extension=php_mysql.dllextension=php_mysqli.dll将php_mysql.dll和libmysql.dll拷到system32重起apache服务器]]></content>
+    <content type="text"><![CDATA[dbServername弄错了，（就是本机上填localhost那个参数）我 就是犯了这个错误。系统hosts文件未提供填写的服务器参数的解析。方法：在服务器上查看host文件（在/etc里），看里面写了什么（一般为主机名和127.0.0.1）要么改为host里的主机名，要么把host文件改了 只要一出现“mysql_connect”函数，就没反应，也不报错。方法：将“libmysql.dll”复制到apache的bin目录下。然后重启，观察error.log错误是否消失。注：网上资料也有说将““libmysql.dll””“php_mysql.dll”复制到windows/system32的]]></content>
       <categories>
         <category>web</category>
         <category>环境搭建</category>
@@ -111,7 +111,7 @@
   <entry>
     <title><![CDATA[nmap]]></title>
     <url>%2F2019%2F02%2F20%2F13%2F</url>
-    <content type="text"><![CDATA[你可以使用 通配符来扫描整个子网或某个范围的IP地址，如搜索本地虚拟机ip `nmap -sP 192.168.0.-sP 检测网络中有哪些在线主机 -v 给出了远程机器更详细的信息 -iL 扫描文件中列出的所有IP地址 --exclude+排除的ip -A 检测远程主机上运行的操作系统和版本-O和-osscan，-guess也帮助探测操作系统信息 -sA 是否使用了包过滤器或防火墙 -PN 是否受到数据包过滤软件或防火墙的保护 -F 执行一次快速扫描 -P+你想要扫描的端口如：nmap -p 80 server2.tecmint.comnmap -p T:8888（端口类型）,80（端口号） server2.tecmint.com`-sS 隐蔽的扫描-sT 扫描常用端口-sN 执行TCP空扫描以骗过防火墙 注：“，”隔开多个ip或端口，“ -”前后接范围]]></content>
+    <content type="text"><![CDATA[你可以使用* 通配符来扫描整个子网或某个范围的IP地址，如搜索本地虚拟机ip nmap -sP 192.168.0.*-sP 检测网络中有哪些在线主机-v 给出了远程机器更详细的信息-iL 扫描文件中列出的所有IP地址–exclude+排除的ip-A 检测远程主机上运行的操作系统和版本-O和-osscan，-guess也帮助探测操作系统信息-sA 是否使用了包过滤器或防火墙-PN 是否受到数据包过滤软件或防火墙的保护-F 执行一次快速扫描-P+你想要扫描的端口如：nmap -p 80 server2.tecmint.com nmap -p T:8888（端口类型）,80（端口号） server2.tecmint.com-sS 隐蔽的扫描-sT 扫描常用端口-sN 执行TCP空扫描以骗过防火墙 注：“，”隔开多个ip或端口，“ -”前后接范围]]></content>
       <categories>
         <category>web</category>
         <category>工具运用</category>

@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="你可以使用 通配符来扫描整个子网或某个范围的IP地址，如搜索本地虚拟机ip `nmap -sP 192.168.0.-sP 检测网络中有哪些在线主机 -v 给出了远程机器更详细的信息 -iL 扫描文件中列出的所有IP地址 --exclude+排除的ip -A 检测远程主机上运行的操作系统和版本-O和-osscan，-guess也帮助探测操作系统信息 -sA 是否使用了包过滤器或防火墙 -PN 是否">
+<meta name="description" content="你可以使用* 通配符来扫描整个子网或某个范围的IP地址，如搜索本地虚拟机ip nmap -sP 192.168.0.*-sP 检测网络中有哪些在线主机-v 给出了远程机器更详细的信息-iL 扫描文件中列出的所有IP地址–exclude+排除的ip-A 检测远程主机上运行的操作系统和版本-O和-osscan，-guess也帮助探测操作系统信息-sA 是否使用了包过滤器或防火墙-PN 是否受到数据包过">
 <meta name="keywords" content="技术">
 <meta property="og:type" content="article">
 <meta property="og:title" content="nmap">
 <meta property="og:url" content="http://yoursite.com/2019/02/20/13/index.html">
 <meta property="og:site_name" content="Good Good Study">
-<meta property="og:description" content="你可以使用 通配符来扫描整个子网或某个范围的IP地址，如搜索本地虚拟机ip `nmap -sP 192.168.0.-sP 检测网络中有哪些在线主机 -v 给出了远程机器更详细的信息 -iL 扫描文件中列出的所有IP地址 --exclude+排除的ip -A 检测远程主机上运行的操作系统和版本-O和-osscan，-guess也帮助探测操作系统信息 -sA 是否使用了包过滤器或防火墙 -PN 是否">
+<meta property="og:description" content="你可以使用* 通配符来扫描整个子网或某个范围的IP地址，如搜索本地虚拟机ip nmap -sP 192.168.0.*-sP 检测网络中有哪些在线主机-v 给出了远程机器更详细的信息-iL 扫描文件中列出的所有IP地址–exclude+排除的ip-A 检测远程主机上运行的操作系统和版本-O和-osscan，-guess也帮助探测操作系统信息-sA 是否使用了包过滤器或防火墙-PN 是否受到数据包过">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-20T12:35:52.737Z">
+<meta property="og:updated_time" content="2019-02-21T15:47:40.158Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nmap">
-<meta name="twitter:description" content="你可以使用 通配符来扫描整个子网或某个范围的IP地址，如搜索本地虚拟机ip `nmap -sP 192.168.0.-sP 检测网络中有哪些在线主机 -v 给出了远程机器更详细的信息 -iL 扫描文件中列出的所有IP地址 --exclude+排除的ip -A 检测远程主机上运行的操作系统和版本-O和-osscan，-guess也帮助探测操作系统信息 -sA 是否使用了包过滤器或防火墙 -PN 是否">
+<meta name="twitter:description" content="你可以使用* 通配符来扫描整个子网或某个范围的IP地址，如搜索本地虚拟机ip nmap -sP 192.168.0.*-sP 检测网络中有哪些在线主机-v 给出了远程机器更详细的信息-iL 扫描文件中列出的所有IP地址–exclude+排除的ip-A 检测远程主机上运行的操作系统和版本-O和-osscan，-guess也帮助探测操作系统信息-sA 是否使用了包过滤器或防火墙-PN 是否受到数据包过">
 
 
 
@@ -407,15 +407,8 @@
       
 
       
-        <p>你可以使用<em> 通配符来扫描整个子网或某个范围的IP地址，如搜索本地虚拟机ip `nmap -sP 192.168.0.</em><code>-sP 检测网络中有哪些在线主机
--v 给出了远程机器更详细的信息
--iL 扫描文件中列出的所有IP地址
---exclude+排除的ip
--A 检测远程主机上运行的操作系统和版本-O和-osscan，-guess也帮助探测操作系统信息
--sA 是否使用了包过滤器或防火墙
--PN 是否受到数据包过滤软件或防火墙的保护
--F 执行一次快速扫描
--P+你想要扫描的端口如：</code>nmap -p 80 server2.tecmint.com<br>nmap -p T:8888（端口类型）,80（端口号） server2.tecmint.com`<br>-sS 隐蔽的扫描<br>-sT 扫描常用端口<br>-sN 执行TCP空扫描以骗过防火墙</p>
+        <p>你可以使用* 通配符来扫描整个子网或某个范围的IP地址，如搜索本地虚拟机ip <code>nmap -sP 192.168.0.*</code><br>-sP 检测网络中有哪些在线主机<br>-v 给出了远程机器更详细的信息<br>-iL 扫描文件中列出的所有IP地址<br>–exclude+排除的ip<br>-A 检测远程主机上运行的操作系统和版本-O和-osscan，-guess也帮助探测操作系统信息<br>-sA 是否使用了包过滤器或防火墙<br>-PN 是否受到数据包过滤软件或防火墙的保护<br>-F 执行一次快速扫描<br>-P+你想要扫描的端口如：<br><code>nmap -p 80 server2.tecmint.com
+nmap -p T:8888（端口类型）,80（端口号） server2.tecmint.com</code><br>-sS 隐蔽的扫描<br>-sT 扫描常用端口<br>-sN 执行TCP空扫描以骗过防火墙</p>
 <p><strong>注：“，”隔开多个ip或端口，“ -”前后接范围</strong></p>
 
       
@@ -538,7 +531,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -549,7 +542,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
